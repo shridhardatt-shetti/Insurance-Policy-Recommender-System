@@ -1,0 +1,33 @@
+#importing packages
+import numpy as np
+import pandas as pd
+
+#Reading csv file
+dataset=pd.read_csv("C:\\Users\\acer-pc\\Desktop\\!Desktop\\Insurance Policy Recommender System\\policy.csv")
+dataset
+
+#seperating dependent and independent columns
+X=dataset.iloc[:,[0,1]].values
+X
+y=dataset.iloc[:,2].values
+y
+
+#Splitting dataset into test data and train data
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+
+#Fitting DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier 
+model=DecisionTreeClassifier()
+model.fit(X_train,y_train)
+
+#predicting for x_test data
+y_pred = model.predict(X_test)
+
+# Model Accuracy, how often is the classifier correct?
+from sklearn import metrics
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+
+#Predicting for custom inputs
+predictions=model.predict([[22,35000],[26,50000]])
+predictions
