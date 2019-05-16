@@ -7,6 +7,8 @@ average monthly savings considered in dataset 20000 to 80000.
 accuracy is 80%
 algorithm used: Decision Tree Algorithm
 
+refer Youtube for the working: https://youtu.be/zTX6MjIvD1c
+
 PS: Make sure to change the location of csv file in the python code accordingly.
 
 Hire Me if u can.lol.No please hire me. I am serious.
